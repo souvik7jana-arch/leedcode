@@ -1,13 +1,14 @@
-bool isPalindrome(int x) {
-    if (x<0||(x % 10 ==0 && x!= 0)){
-    return false;
+bool isPalindrome(int n) {
+    long revnum=0;
+    int dup=n;
+    while(n>0){
+        int lastdigit=n%10;
+     revnum=(revnum*10)+lastdigit;
+        n=n/10;
     }
-    int reversedhalf = 0;
-    while (x> reversedhalf ){
-        reversedhalf = reversedhalf *10+ x % 10;
-        x/=10;
+    if(dup==revnum)
+    {
+        return true;
+      }  else 
+        return false;
     }
-    return x==reversedhalf || x== reversedhalf / 10;
-
-    return true;
-}
